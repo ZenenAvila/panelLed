@@ -1,0 +1,21 @@
+{
+  "name": "api-panel-led",
+  "version": "1.0.0",
+  "description": "api para almacenamiento y consulta de las imagenes para el panel",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Zenen Avila",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
