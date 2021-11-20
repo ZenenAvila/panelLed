@@ -14,8 +14,9 @@ router.get("/mostrar",async(request,response)=>{
 //insertar usuariosn
 router.post('/insertar',async(request,response)=>{
     try{    
-        const imagenes=await panelController.insertar(
+        await panelController.insertar(
             request.body.nombre,request.body.leds);
+        const imagenes=await panelController.mostrar();
         response.json(imagenes);
     } catch(error){
         console.log(`error insertar(routers): ${error}`);
@@ -24,9 +25,10 @@ router.post('/insertar',async(request,response)=>{
 
 router.post('/actualizar',async(request,response)=>{
     try{    
-        const imagenes=await panelController.actualizar(
+        await panelController.actualizar(
             request.body.id,request.body.nombre,
             request.body.leds);
+        const imagenes=await panelController.mostrar();
         response.json(imagenes);
     } catch(error){
         console.log(`error actualizar(routers): ${error}`);
@@ -35,8 +37,9 @@ router.post('/actualizar',async(request,response)=>{
  
 router.post('/eliminar',async(request,response)=>{
     try{    
-        const imagenes=await panelController.eliminar(
+        await panelController.eliminar(
             request.body.id);
+        const imagenes=await panelController.mostrar();
         response.json(imagenes);
     } catch(error){
         console.log(`error eliminar(routers): ${error}`);
