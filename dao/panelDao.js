@@ -26,10 +26,10 @@ const insertar =async (nombre,leds) =>{
     }
 }
 
-const eliminar = async(id)=>{
+const eliminar = async(nombre)=>{
     try{
         await pool.query(`delete from imagenespanel 
-        where id =${id};`);
+        where id =${nombre};`);
     
     } catch(error)
     {

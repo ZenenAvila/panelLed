@@ -25,8 +25,7 @@ router.post('/insertar',async(request,response)=>{
 
 router.post('/actualizar',async(request,response)=>{
     try{    
-        await panelController.actualizar(
-            request.body.id,request.body.nombre,
+        await panelController.actualizar(request.body.nombre,
             request.body.leds);
         const imagenes=await panelController.mostrar();
         response.json(imagenes);
@@ -38,7 +37,7 @@ router.post('/actualizar',async(request,response)=>{
 router.post('/eliminar',async(request,response)=>{
     try{    
         await panelController.eliminar(
-            request.body.id);
+            request.body.nombre);
         const imagenes=await panelController.mostrar();
         response.json(imagenes);
     } catch(error){
