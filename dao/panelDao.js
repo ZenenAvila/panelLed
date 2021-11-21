@@ -29,7 +29,7 @@ const insertar =async (nombre,leds) =>{
 const eliminar = async(nombre)=>{
     try{
         await pool.query(`delete from imagenespanel 
-        where id =${nombre};`);
+        where nombre ='${nombre}';`);
     
     } catch(error)
     {
@@ -37,12 +37,12 @@ const eliminar = async(nombre)=>{
     }
 }
 
-const actualizar = async(id,nombre,leds)=>{
+const actualizar = async(nombre,leds)=>{
     try{
         await pool.query(`update imagenespanel 
                 set nombre='${nombre}',
                     leds='${leds}'
-                    where nombre=${nombre}`);
+                    where nombre='${nombre}';`);
     }catch(error)
     {
         console.log(`error actualizar(dao): ${error}`);    
