@@ -2,6 +2,17 @@
 const { pool } = require('../db/conection');
 
 
+const mostrararduino = async () =>{
+    try{
+        const leds = await pool.query(`select leds from imagenespanel 
+        order by id asc;`);
+        return leds.rows;
+
+    } catch (error){
+        console.log(`error mostrararduino(dao): ${error}`);
+    }
+}
+
 const mostrar = async () =>{
     try{
         const leds = await pool.query(`select * from imagenespanel 
@@ -49,4 +60,4 @@ const actualizar = async(nombre,leds)=>{
     }
 }
 
-module.exports={mostrar,insertar,eliminar,actualizar};
+module.exports={mostrar,insertar,eliminar,actualizar,mostrararduino};

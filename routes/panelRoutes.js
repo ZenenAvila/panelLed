@@ -1,6 +1,25 @@
 const router = require('express').Router();
 const panelController=require('../dao/panelDao');
 
+router.get("/mostrararduino",async(request,response)=>{
+    try{
+        let respuesta=await panelController.mostrararduino();
+        let leds =respuesta.map(function(respuesta){
+            return respuesta.leds
+        });      
+        let arduino="";
+        for (let led of leds)
+        {
+            arduino+="-"+led;
+        }
+        arduino=arduino.substring(1,arduino.length)
+        response.json(arduino);
+    } catch(error){
+        console.log(`error mostrararduino(routers): ${error}`);
+    }
+     
+});
+
 router.get("/mostrar",async(request,response)=>{
     try{
         const imagenes=await panelController.mostrar();
@@ -11,7 +30,7 @@ router.get("/mostrar",async(request,response)=>{
      
 });
 
-//insertar usuariosn
+//insertar usuarios
 router.post('/insertar',async(request,response)=>{
     try{    
         await panelController.insertar(
