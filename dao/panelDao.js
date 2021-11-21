@@ -42,7 +42,7 @@ const actualizar = async(id,nombre,leds)=>{
         await pool.query(`update imagenespanel 
                 set nombre='${nombre}',
                     leds='${leds}'
-                    where id=${id}`);
+                    where nombre=${nombre}`);
     }catch(error)
     {
         console.log(`error actualizar(dao): ${error}`);    
