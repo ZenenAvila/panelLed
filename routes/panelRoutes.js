@@ -4,16 +4,17 @@ const panelController=require('../dao/panelDao');
 router.get("/mostrararduino",async(request,response)=>{
     try{
         let respuesta=await panelController.mostrararduino();
-        let leds =respuesta.map(function(respuesta){
+        let listleds =respuesta.map(function(respuesta){
             return respuesta.leds
         });      
         let arduino="";
-        for (let led of leds)
+        for (let led of listleds)
         {
             arduino+="-"+led;
         }
         arduino=arduino.substring(1,arduino.length)
-        response.json(arduino);
+        let arduinoJSON=JSON.parse('{"leds":"'+arduino+'"}');
+        response.json(arduinoJSON);
     } catch(error){
         console.log(`error mostrararduino(routers): ${error}`);
     }
