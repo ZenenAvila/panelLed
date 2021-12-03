@@ -13,7 +13,7 @@ router.get("/mostrararduino",async(request,response)=>{
             arduino+="-"+led;
         }
         arduino=arduino.substring(1,arduino.length)
-        let arduinoJSON=JSON.parse('{"leds":"'+arduino+'"}');
+        let arduinoJSON=JSON.parse('[{"leds":"'+arduino+'"}]');
         response.json(arduinoJSON);
     } catch(error){
         console.log(`error mostrararduino(routers): ${error}`);
