@@ -17,5 +17,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZenenAvila/panelLed.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZenenAvila/panelLed/issues"
+  },
+  "homepage": "https://github.com/ZenenAvila/panelLed#readme"
 }
