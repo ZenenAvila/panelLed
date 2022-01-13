@@ -11,7 +11,7 @@ router.get("/mostrararduino1",async(request,response)=>{
         });      
         let arduino="";
         try{
-            for(let i=0;i<7;i++)
+            for(let i=0;i<5;i++)
             {
                 arduino+="-"+listleds[i];
             }
@@ -37,7 +37,7 @@ router.get("/mostrararduino2",async(request,response)=>{
         });      
         let arduino="";
         try{
-            for(let i=7;i<14;i++)
+            for(let i=5;i<10;i++)
             {
                 arduino+="-"+listleds[i];
             }
@@ -63,7 +63,7 @@ router.get("/mostrararduino3",async(request,response)=>{
         });      
         let arduino="";
         try{
-            for(let i=14;i<21;i++)
+            for(let i=10;i<15;i++)
             {
                 arduino+="-"+listleds[i];
             }
@@ -89,7 +89,7 @@ router.get("/mostrararduino4",async(request,response)=>{
         });      
         let arduino="";
         try{
-            for(let i=21;i<28;i++)
+            for(let i=15;i<20;i++)
             {
                 arduino+="-"+listleds[i];
             }
@@ -115,7 +115,7 @@ router.get("/mostrararduino5",async(request,response)=>{
         });      
         let arduino="";
         try{
-            for(let i=28;i<35;i++)
+            for(let i=20;i<25;i++)
             {
                 arduino+="-"+listleds[i];
             }
@@ -141,7 +141,7 @@ router.get("/mostrararduino6",async(request,response)=>{
         });      
         let arduino="";
         try{
-            for(let i=35;i<42;i++)
+            for(let i=25;i<30;i++)
             {
                 arduino+="-"+listleds[i];
             }
@@ -167,7 +167,7 @@ router.get("/mostrararduino7",async(request,response)=>{
         });      
         let arduino="";
         try{
-            for(let i=42;i<49;i++)
+            for(let i=30;i<35;i++)
             {
                 arduino+="-"+listleds[i];
             }
@@ -193,7 +193,7 @@ router.get("/mostrararduino8",async(request,response)=>{
         });      
         let arduino="";
         try{
-            for(let i=49;i<56;i++)
+            for(let i=3540;i<56;i++)
             {
                 arduino+="-"+listleds[i];
             }
@@ -219,7 +219,7 @@ router.get("/mostrararduino9",async(request,response)=>{
         });      
         let arduino="";
         try{
-            for(let i=56;i<63;i++)
+            for(let i=40;i<45;i++)
             {
                 arduino+="-"+listleds[i];
             }
@@ -245,7 +245,7 @@ router.get("/mostrararduino10",async(request,response)=>{
         });      
         let arduino="";
         try{
-            for(let i=63;i<70;i++)
+            for(let i=45;i<50;i++)
             {
                 arduino+="-"+listleds[i];
             }
