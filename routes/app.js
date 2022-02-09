@@ -1,11 +1,13 @@
 const express=require('express');
 const app=express();
 const bodyParser=require('body-parser');
+//////////////
+const path = require('path')
 /////////////////cors
 const cors=require('cors');
 app.use(cors());
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 80;
 
 app.use(bodyParser.json());
 app.use(
@@ -23,7 +25,7 @@ app.use((req, res, next) => {
   });
 
   app.get('/',(request,response)=>{
-    response.json({info:'la API esta en ejecución'});
+    response.sendFile(path.resolve(__dirname,'index.html'));
 });
 
 app.listen(port,()=>{
