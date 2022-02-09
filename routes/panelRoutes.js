@@ -177,7 +177,7 @@ router.get("/mostrararduino8", async (request, response) => {
     });
     let arduino = "";
     try {
-      for (let i = 3540; i < 56; i++) {
+      for (let i = 35; i < 40; i++) {
         arduino += "-" + listleds[i];
       }
     } catch (error) {
