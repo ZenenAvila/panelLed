@@ -250,18 +250,17 @@ router.get("/mostrar", async (request, response) => {
   }
 });
 
-router.post("/mostrararduino", async (request, response) => {
+router.get("/mostrararduino/:indice", async (request, response) => {
   try {
     let respuesta = await panelController.mostrararduino();
     let listleds = respuesta.map(function (respuesta) {
       return respuesta.leds;
     });
     let arduino = "";
-    let id = request.body.id;
+    let id = request.params.indice;
     try {
       for (let i = id - 5; i < id; i++) {
         arduino += "-" + listleds[i];
-        console.log(listleds[i]);
       }
     } catch (error) {
       console.log(`error mostrararduino(routers): ${error}`);
